@@ -1,1 +1,3 @@
-RUN npm i -g
+bot-build
+	docker-compose build bot
+
