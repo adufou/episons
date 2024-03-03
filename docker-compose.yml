@@ -5,6 +5,6 @@ services:
     build: ./bot
     env_file:
       - /bot/.env
-    volumes:
-      - ./bot:/app #Check sur la dock pour les slash !
+    #volumes:
+      #- ./bot:/app #Check sur la dock pour les slash !
 
