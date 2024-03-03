@@ -4,7 +4,12 @@ services:
   bot:
     build: ./bot
     env_file:
-      - /bot/.env
-    #volumes:
-      #- ./bot:/app #Check sur la dock pour les slash !
-
+      - ./bot/.env
+    volumes:
+      - ./bot:/app #Check sur la dock pour les slash !
+  api:
+    build: ./episons-api
+    env_file:
+      - ./episons-api/.env*
+    volumes:
+      - ./episons-api:/app
