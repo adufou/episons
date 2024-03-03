@@ -3,4 +3,4 @@
 
 bot/node_modules/
 **/package-lock.json
-
+bot/config.json

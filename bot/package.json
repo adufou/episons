@@ -18,5 +18,8 @@
   "homepage": "https://github.com/adufou/episons#readme",
   "devDependencies": {
     "eslint": "^8.57.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }
