@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  bot:
+    context: .
+    dockerfile: ./api/Doc
+    volumes:
+      - ./front:/app/src #Check sur la dock pour les slash !

@@ -1,0 +1,1 @@
+RUN npm i -g
