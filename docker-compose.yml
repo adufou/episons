@@ -13,3 +13,21 @@ services:
       - ./episons-api/.env*
     volumes:
       - ./episons-api:/app
+  db:
+    image: postgres:16.0-alpine
+    container_name: postgres
+    env_file: config/db.env.example
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
+    ports:
+      - "7501:7501"
+  pg-admin:
+    image: dpage/pgadmin4:7.8
+    container_name: pgadmin
+    env_file: config/pgadmin.env
+    volumes:
+      - "./db/pgadmin-data:/var/lib/pgadmin"
+    depends_on:
+      - postgres
+    ports:
+      - "7502:80"
