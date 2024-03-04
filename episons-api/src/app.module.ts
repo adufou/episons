@@ -9,7 +9,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
   imports: [
     ConfigModule.forRoot({isGlobal: true}),
     TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
+      imports: [ConfigModule, UsersModule],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
         host: configService.get('DB_HOST'),
@@ -17,7 +17,7 @@ import {TypeOrmModule} from "@nestjs/typeorm";
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [],
+        entities: [__dirname + '/../**/*.entity.js'],
         synchronize: true,
       }),
       inject: [ConfigService],
