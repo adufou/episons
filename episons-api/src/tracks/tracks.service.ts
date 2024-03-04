@@ -17,8 +17,7 @@ export class TracksService {
   }
 
   findTrackById(id: number) {
-    // @ts-ignore
-    return this.trackRepository.findOne(id);
+    return this.trackRepository.findOneBy({id: id});;
   }
 
   findTracks() {

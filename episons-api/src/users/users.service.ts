@@ -17,8 +17,7 @@ export class UsersService {
   }
 
   findUsersById(id: number) {
-    // @ts-ignore
-    return this.userRepository.findOne(id);
+    return this.userRepository.findOneBy({id: id});
   }
 
   findUsers() {
