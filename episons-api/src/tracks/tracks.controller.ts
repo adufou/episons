@@ -16,17 +16,17 @@ export class TracksController {
   constructor(private readonly tracksService: TracksService) {}
 
   @Get()
-  getUsers() {
+  getTracks() {
     return this.tracksService.findTracks();
   }
 
   @Get('id/:id')
-  findUsersById(@Param('id', ParseIntPipe) id: number) {
+  findTrackById(@Param('id', ParseIntPipe) id: number) {
     return this.tracksService.findTrackById(id);
   }
 
   @Post('create')
-  createUsers(@Body() createTrackDto: CreateTrackDto) {
+  createTrack(@Body() createTrackDto: CreateTrackDto) {
     return this.tracksService.createTrack(createTrackDto);
   }
 }
