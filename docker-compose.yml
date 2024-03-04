@@ -4,7 +4,30 @@ services:
   bot:
     build: ./bot
     env_file:
-      - /bot/.env
-    #volumes:
-      #- ./bot:/app #Check sur la dock pour les slash !
-
+      - ./bot/.env
+    volumes:
+      - ./bot:/app #Check sur la dock pour les slash !
+  api:
+    build: ./episons-api
+    env_file:
+      - ./episons-api/.env
+    volumes:
+      - ./episons-api:/app
+  db:
+    image: postgres:16.0-alpine
+    container_name: postgres
+    env_file: db/db.env
+    volumes:
+      - "./db/data:/var/lib/postgresql/data"
+    ports:
+      - "7501:7501"
+  pg-admin:
+    image: dpage/pgadmin4:7.8
+    container_name: pgadmin
+    env_file: db/pgadmin.env
+    volumes:
+      - "./db/pgadmin-data:/var/lib/pgadmin"
+    depends_on:
+      - db
+    ports:
+      - "7502:80"
