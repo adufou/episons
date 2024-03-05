@@ -1,27 +1,42 @@
 {
-  "name": "episons-bot",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "A Discord bot boilerplate including TypeScript and ESLint.",
+  "author": {
+    "email": "fellipeutaka@gmail.com",
+    "name": "Fellipe Utaka"
   },
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/fellipeutaka/discord-bot-template",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adufou/episons.git"
+    "url": "https://github.com/fellipeutaka/discord-bot-template.git"
   },
-  "author": "louis-santucci & adufou",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adufou/episons/issues"
-  },
-  "homepage": "https://github.com/adufou/episons#readme",
-  "devDependencies": {
-    "eslint": "^8.57.0"
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node ../../Downloads/discord-bot-template-main",
+    "build": "tsup src/index.ts --minify",
+    "format": "prettier --write \"**/*.{json,ts}\"",
+    "lint": "eslint ../../Downloads/discord-bot-template-main --ext ts --fix"
   },
   "dependencies": {
-    "discord.js": "^14.14.1",
-    "dotenv": "^16.4.5"
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^2.8.4",
+    "tsup": "^6.6.0",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
   }
 }
