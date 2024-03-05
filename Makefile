@@ -1,7 +1,7 @@
 bot-install:
 
 
-bot-build:
+bot-build
 	docker-compose build bot
 
 api-build:
