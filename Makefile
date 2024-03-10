@@ -1,7 +1,13 @@
-bot-install:
+build:
+	docker-compose build
 
+up:
+	docker-compose up
 
-bot-build
+run:
+	docker-compose up --build
+
+bot-build:
 	docker-compose build bot
 
 api-build:
